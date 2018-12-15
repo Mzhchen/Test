@@ -1,0 +1,108 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+    margin:0;padding:0
+}
+.title{
+    height: 100px;
+    width: 100%;
+    background-color:rgb(213,166,189);
+    position: fixed;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.title_l {
+    margin-left:100px;
+    position: absolute;
+}
+.title_r{
+    width: 60%;
+    height: 100%;
+    float: right;
+    /*background-color: #cccccc;*/
+    margin-top: 15px;
+}
+.title_r div{
+    float: left;
+    width: 33%;
+    height: 100%;
+    text-align: center;
+    padding-top:28px;
+    font-weight: 600;
+
+}
+.title_r div a{
+    text-decoration: none;
+    color: white;
+}
+.title_r div:hover{
+    font-size: 20px;
+}
+.room{
+    margin: 0 auto;
+    padding-top: 200px;
+    width:1153px;
+    height: 1000px;
+    /*background-color: #cccccc;*/
+    box-sizing: border-box;
+}
+.picture_1{
+    width: 1153px;
+    height: 149px;
+}
+.picture_2{
+    overflow: hidden;
+}
+.picture_2 ul{
+    width: 2400px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    animation: move1 20s linear 0s infinite normal;
+}
+.picture_2 ul li{
+    float: left;
+    list-style: none;
+    box-sizing: border-box;
+}
+@keyframes move1 {
+    from{
+        margin-left: 0;
+    }
+    to{
+        margin-left: -1200px;
+    }
+}
+.picture_2 ul:hover{
+    animation-play-state: paused;
+}
+.picture2{
+    padding-top: 80px;
+}
+.picture_3{
+    width:700px;
+    height: 300px;
+    margin: 35px auto;
+    background-image: url("Image/bg-plane.jpg"),url("Image/bg-sun.png"), url("Image/bg-clouds.png");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 50px 50px, 50px 50px, auto auto;
+    background-position: 50px 150px, 400px 50px, 0px 0px;
+    animation: move2 10s linear 0s infinite normal;
+}
+ @keyframes move2 {
+    from{
+        background-position: 50px 150px, 400px 50px, 0px 0px;
+    }
+    to{
+        background-position: 500px -150px, 400px 50px, -600px 0px;
+    }
+}
+.picture_4{
+    width: 109px;
+    height: 69px;
+    margin: 0 auto;
+    font-size: 13px;
+    color: #cccccc;
+}
+.foot_top{
+    height: 400px;
+    width: 400px;
+}

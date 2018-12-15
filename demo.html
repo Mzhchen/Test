@@ -1,0 +1,159 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>气球</title>
+
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+p {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 5%;
+  font-family:"楷体";
+  border: 1px solid black;
+  padding: .8rem 4rem;
+  background-image: url("Image/timg.jpg");
+  text-align: left;
+  font-weight: bold;
+
+}
+p span{
+  font-size: 16px;
+  font-weight: 900;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+
+<script type="text/javascript" src="js/wmgwdw.js"></script>
+<audio src="gbqq.mp3" autoplay="autoplay" controls="controls"></audio>
+<p class="page">
+  <span>Hello，纪阿姨：</span>
+  <br><br>&nbsp&nbsp&nbsp首先当然是祝福啦！21岁生日快乐呀！！！一定要天天开心呀！！！
+  第一次给你过生<br>日，真的好多话想说呀，我把这些话呢都写在了这封信。你不要嫌啰嗦喔，一定要仔细读完蛤～<br><br>
+  &nbsp&nbsp&nbsp其实嘞，认识你也并没有太久，撩骚也是最近才开始的。不过这些已经足以让我喜欢上你，至于原因呢还是让我慢慢说来吧。第一次知道你，是通过浩林，他说有一个朋友想要去西安缺人组队。恰巧那时我也有去西安的打算，便联系你和颂华了。浩林也和我说了一些你的事情。不过，那个时候我对西安的兴趣要远远大过于你哈哈哈哈。第一次认识你呢，是在群里。我的第一印象就是，这个妹子的性格好直啊，而且好像一天到晚都是不怎么玩手机的那种学霸（因为群上几乎都是另外两个在聊天）那时候和你们也不熟，我没有怎么在群上聊天，也没有私聊过你们。除了第一次加你微信和你的尬聊，是真的尬！第一次见面我和浩林开着两辆小绵羊去载你们。那时的感觉就是，嗯，比照片上的要好看。（那时还是有点点小心动滴）不过，让我最深刻的还是，你也太能丢东西了，包包忘记拿，还有你丢过的那几部手机……你还真的是我见过最pàcào的人（客家话哈哈哈，不过我承认还是有点小可爱的）然后就是一起旅游的时候啦。那三天呢，过的真的是很开心呀，而且那个时候我就已经开始慢慢喜欢上你了，至于为什么有这么长一段时间我没有找你，在这里我就先不说，等见面再说趴，嘻嘻，卖个关子。<br><br>
+  &nbsp&nbsp&nbsp 哎～说了这么多花里胡哨，过生日，生日礼物当然是要有滴。你现在看到的，就是送给你的第一个礼物啦—一个网站。不过因为时间问题我没有把网站做到最好（我也是不久之前才知道你的生日呀），现在只能用pc端访问，还没做成响应式的动态网站。不过往后我肯定会持续更新下去啦，因为对于我而言你是最重要之一（而且这是你的礼物），这个网站也是我最用心去做的第一个属于我们的网站，以后就当作是记录我们之间故事的一个载体趴，永远的更新下去。（网站设计理念，等见面说趴哈哈哈哈）<br>
+  &nbsp&nbsp&nbsp第二个礼物呢，就是我亲手交给你的那个呀。多喝热水，并不是直男语录，是真的是发自内心的呀～所以送你那个暖暖杯之后，要经常和热水呀～就不用我提醒啦。
+  <br>&nbsp&nbsp&nbsp当你已经读到这里的时候，你变获得了第三个礼物—一个男朋友。这个是强制礼物，不能拒绝，不能嫌弃，不能退货，要好好保存，好好爱护～
+  <br>&nbsp&nbsp&nbsp送你三个礼物，有没有感觉很感动，哈哈哈哈（不许没有）。这封信，该说的也差不多说完了趴。剩下的，就让我以后和你慢慢道来吧。
+  <br><br>PS：纪阿姨，你一定要原谅我叫你阿姨呀。因为比我大很多的人我都这么称呼的。以后你年龄再大点的时候，我再改口吧，改叫纪妈。</p>
+
+<script type="text/javascript">
+var extend = function extend(base) {
+  for (var _len = arguments.length, extensions = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    extensions[_key - 1] = arguments[_key];
+  }
+
+  return Object.assign.apply(Object, [{}, base].concat(extensions));
+};
+
+var parseColor = function parseColor(_ref) {
+  var h = _ref.h,
+      s = _ref.s,
+      l = _ref.l,
+      a = _ref.a;
+  return 'hsla(' + h + ',' + s + '%,' + l + '%,' + a + ')';
+};
+
+var Color = extend.bind(null, { h: 0, s: 100, l: 100, a: 1 });
+
+var Vector = extend.bind(null, { x: 0, y: 0 });
+
+var Particle = extend.bind(null, {
+  pos: Vector(),
+  vel: Vector(),
+  angle: 0,
+  speed: 0,
+  radius: 0,
+  rotation: 0,
+  color: Color()
+});
+
+var colors = [Color({ h: 20, s: 100, l: 50 }), Color({ h: 200, l: 50 }), Color({ h: 300, l: 50 }), Color({ h: 100, l: 40 })];
+
+var animationLoop = function animationLoop(scope) {
+  if (scope.animation) {
+    scope.animation(animationLoop.bind(null, scope));
+  }
+
+  var ctx = scope.ctx;
+  var canvas = ctx.canvas;
+
+  var rc = rough.canvas(canvas);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  scope.particles.map(function (p, i) {
+    p.pos.y -= p.speed;
+    if (i % 2) {
+      p.pos.x = p.pos.x + Math.sin(p.angle) * .2;
+    } else {
+      p.pos.x = p.pos.x - Math.cos(p.angle) * .2;
+    }
+    p.angle += .01;
+    rc.circle(p.pos.x, p.pos.y, p.radius, {
+      fill: parseColor(p.color),
+      roughness: Math.random() * 1.5,
+      hachureGap: p.hachureGap,
+      hachureAngle: p.hachureAngle
+    });
+    rc.line(p.pos.x, p.pos.y + p.radius * 1.2, p.pos.x, p.pos.y + p.radius / 2, {
+      bowing: Math.random() * 3
+    });
+    if (p.pos.y + p.radius * 3 < 0) {
+      p.pos.y = canvas.height + p.radius * 3;
+      p.pos.x = Math.random() * (canvas.width - p.radius);
+    }
+  });
+};
+
+var scope = {
+  animation: requestAnimationFrame.bind(null),
+  ctx: document.createElement('canvas').getContext('2d'),
+  title: 'Brian Douglas',
+  rotation: 0,
+  particles: []
+};
+
+~function (scope) {
+  var canvas = scope.ctx.canvas;
+
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  document.body.appendChild(canvas);
+
+  var particleCount = 50;
+  while (particleCount--) {
+    scope.particles.push(Particle({
+      pos: {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height
+      },
+      speed: Math.random() + .2,
+      radius: Math.random() * 60 + 20,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      hachureAngle: Math.random() * 90,
+      hachureGap: Math.random() * 8 + 1
+    }));
+  }
+
+  animationLoop(scope);
+}(scope);
+
+if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  window.addEventListener('resize', function () {
+    scope.ctx.canvas.width = window.innerWidth;
+    scope.ctx.canvas.height = window.innerHeight;
+  });
+}</script>
+
+</body>
+</html>
